@@ -60,7 +60,7 @@
                         </div>
                     </div>
                     <div class="card-footer text-right">
-                        <button type="button" class="btn btn-success" href="#">Sukses !</button>
+                        <button type="button" class="btn btn-success" href="#">Sukses!!!</button>
                     </div>
                 </div>
             </div>
