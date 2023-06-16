@@ -14,7 +14,7 @@ return [
     |
     */
 
-    'title' => 'Sympozia',
+    'title' => 'ArSys 2023',
     'title_prefix' => '',
     'title_postfix' => '',
 
@@ -45,7 +45,7 @@ return [
     |
     */
 
-    'logo' => '<b>Sympo</b>zia',
+    'logo' => '<b>ArSys</b>2023',
     'logo_img' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
     'logo_img_class' => 'brand-image img-circle elevation-3',
     'logo_img_xl' => null,
@@ -68,8 +68,8 @@ return [
     'usermenu_header' => false,
     'usermenu_header_class' => 'bg-primary',
     'usermenu_image' => false,
-    'usermenu_desc' => false,
-    'usermenu_profile_url' => false,
+    'usermenu_desc' => true,
+    'usermenu_profile_url' => true,
 
     /*
     |--------------------------------------------------------------------------
@@ -225,151 +225,47 @@ return [
     */
 
     'menu' => [
-        // Navbar items:
-        [
-            'type'         => 'navbar-search',
-            'text'         => 'search',
-            'topnav_right' => true,
-        ],
-        [
-            'type'         => 'fullscreen-widget',
-            'topnav_right' => true,
-        ],
-
-        // Sidebar items:
-        [
-            'type' => 'sidebar-menu-search',
-            'text' => 'search',
-        ],
-        [
-            'text' => 'blog',
-            'url'  => 'admin/blog',
-            'can'  => 'manage-blog',
-        ],
-        [
-            'text'        => 'pages',
-            'url'         => 'admin/pages',
-            'icon'        => 'far fa-fw fa-file',
-            'label'       => 4,
-            'label_color' => 'success',
-        ],
-
-        
-        [
-            'text'        => 'User Management',
-            'route'         => 'user.admin',
-            'icon'        => 'far fa-fw fa-file',
-            'roles' => 'admin',
-        ],
-
-        [
-            'text'        => 'News Section',
-            'route'         => 'committee.news',
-            'icon'        => 'far fa-fw fa-file',
-            'roles' => 'committee',
-        ],
-
        
+        [
+            'text'       => 'Profile',
+            'route'      => 'profile.idx',
+            'icon'      => 'far fa-regular fa-user',
+            //'roles'     => ['reviewer', 'committee','author'],
+        ],
 
         [
-            'text' => 'Submission',
-            'route'  => 'author.submission',
-            'icon' => 'far fa-fw fa-file-alt',
-            'roles' => 'author',
+            'text'       => 'Perangkat Lunak Telekomunikasi',
+            'route'      => 'plt.idx',
+            'icon'      => 'far fa-fw fa-file',
+            //'roles'     => ['reviewer', 'committee','author'],
         ],
 
         [
-            'text' => 'Belajar Dasar HTML',
-            'route'  => 'lecture.belajarhtml',
-            'icon' => 'far fa-fw fa-file-alt',
-            'roles' => 'author',
+            'text'       => 'My Past Events',
+            'route'      => 'past.idx',
+            'icon'      => 'far fa-fw fa-regular fa-circle',
+            //'roles'     => ['reviewer', 'committee','author'],
         ],
 
-        ['header' => 'SUBMISSION',
-         'roles' => 'committee',
-        ],
         [
-            'text' => 'Abstrack List',
-            'route'  => 'committee.submission',
-            'icon' => 'far fa-fw fa-file-alt',
-            'roles' => 'committee',
+            'text'       => 'User Management',
+            'route'      => 'arsys.admin.user',
+            'icon'      => 'far fa-fw fa-file',
+            //'roles'     => ['reviewer', 'committee','author'],
         ],
-       
 
-
-        ['header' => 'account_settings'],
         [
-            'text' => 'profile',
-            'route'  => 'user.profile',
-            'icon' => 'fas fa-fw fa-user',
-            
+            'text'       => 'Institution',
+            'route'      => 'arsys.admin.config.institution',
+            'icon'      => 'far fa-fw fa-file',
+            //'roles'     => ['reviewer', 'committee','author'],
         ],
-        [
-            'text' => 'change_password',
-            'url'  => 'admin/settings',
-            'icon' => 'fas fa-fw fa-lock',
-        ],
-        /*[
-            'text'    => 'multilevel',
-            'icon'    => 'fas fa-fw fa-share',
-            'submenu' => [
-                [
-                    'text' => 'level_one',
-                    'url'  => '#',
-                ],
-                [
-                    'text'    => 'level_one',
-                    'url'     => '#',
-                    'submenu' => [
-                        [
-                            'text' => 'level_two',
-                            'url'  => '#',
-                        ],
-                        [
-                            'text'    => 'level_two',
-                            'url'     => '#',
-                            'submenu' => [
-                                [
-                                    'text' => 'level_three',
-                                    'url'  => '#',
-                                ],
-                                [
-                                    'text' => 'level_three',
-                                    'url'  => '#',
-                                ],
-                            ],
-                        ],
-                    ],
-                ],
-                [
-                    'text' => 'level_one',
-                    'url'  => '#',
-                ],
-            ],
-        ],
-        ['header' => 'labels'],
-        [
-            'text'       => 'important',
-            'icon_color' => 'red',
-            'url'        => '#',
-        ],
-        [
-            'text'       => 'warning',
-            'icon_color' => 'yellow',
-            'url'        => '#',
-        ],
-        [
-            'text'       => 'information',
-            'icon_color' => 'cyan',
-            'url'        => '#',
-        ],
-        */
 
         [
             'text'       => 'Log out',
             'route'        => 'user.refresh',
             'icon'      => 'far fa-fw fa-file',
-            'roles'     => ['reviewer', 'committee','author'],
+            //'roles'     => ['reviewer', 'committee','author'],
         ],
     ],
 
@@ -409,6 +305,21 @@ return [
     */
 
     'plugins' => [
+        'BootstrapSelect' => [
+            'active' => true,
+            'files' => [
+                [
+                    'type' => 'js',
+                    'asset' => true,
+                    'location' => 'vendor/bootstrap-select/dist/js/bootstrap-select.min.js',
+                ],
+                [
+                    'type' => 'css',
+                    'asset' => true,
+                    'location' => 'vendor/bootstrap-select/dist/css/bootstrap-select.min.css',
+                ],
+            ],
+        ],
         'Datatables' => [
             'active' => false,
             'files' => [
@@ -430,7 +341,7 @@ return [
             ],
         ],
         'Select2' => [
-            'active' => false,
+            'active' => true,
             'files' => [
                 [
                     'type' => 'js',

@@ -161,6 +161,7 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
+        
 
         /*
          * Package Service Providers...
@@ -174,6 +175,8 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+        'Subfission\Cas\CasServiceProvider',
+        Cog\Laravel\Optimus\Providers\OptimusServiceProvider::class,
 
     ],
 
@@ -228,6 +231,8 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
+        'Cas' => 'Subfission\Cas\Facades\Cas',
+        'Optimus' => Cog\Laravel\Optimus\Facades\Optimus::class,
 
     ],
 

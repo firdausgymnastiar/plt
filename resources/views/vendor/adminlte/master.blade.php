@@ -44,6 +44,7 @@
         @endif
     @endif
 
+    
     {{-- Custom Stylesheets (post AdminLTE) --}}
     @yield('adminlte_css')
 
@@ -73,6 +74,9 @@
 
 <body class="@yield('classes_body')" @yield('body_data')>
 
+    <style>
+        [x-cloak] { display: none !important; }
+    </style>
     {{-- Base Scripts --}}
     @if(!config('adminlte.enabled_laravel_mix'))
         <script src="{{ asset('vendor/jquery/jquery.min.js') }}"></script>
@@ -96,6 +100,13 @@
         @endif
     @endif
 
+
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="{{ asset('vendor/livewire-alert/livewire-alert.js') }}"></script> 
+    <x-livewire-alert::scripts />
+    <x-livewire-alert::flash />
+
+    
 
     {{-- Custom Scripts --}}
     <script src="https://cdn.jsdelivr.net/gh/livewire/sortable@v0.x.x/dist/livewire-sortable.js"></script>
