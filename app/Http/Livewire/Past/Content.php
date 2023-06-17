@@ -4,6 +4,8 @@ namespace App\Http\Livewire\Past;
 
 use Illuminate\Queue\Listener;
 use Livewire\Component;
+use App\Models\Entities\Research;
+use App\Models\ArSys\StaffStatus;
 
 class Content extends Component
 {
@@ -11,7 +13,9 @@ class Content extends Component
     
     public function render()
     {
-        return view('livewire.past.content');
+        return view('livewire.past.content', [
+            'researchs' => Research::paginate(5)
+        ]);
     }
     public function setPageOne()
     {

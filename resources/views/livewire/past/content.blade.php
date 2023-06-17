@@ -27,7 +27,7 @@
         
         </div>
           
-
+        <div>
           <table class="table table-striped">
             <h4>Final defense Thursday, 19 August 2021</h4>
             <thead>
@@ -74,9 +74,10 @@
               
             </tbody>
         </table>
+      </div>
 
             <br><br>
-
+         <div>
             <table class="table table-striped">
                 <h4>Supervised Student</h4>
                 <thead>
@@ -88,15 +89,20 @@
                   </tr>
                 </thead>
                 <tbody>
+                  
                   <tr>
                     <td scope="row">
                       <p>kode student</p>
                       <p>Nama student</p>
                     </td>
-                    <td scope="row">
-                      <p>kode SK</p>
-                      <p>Judul Research</p>
-                    </td>
+
+                  @foreach ($researchs as $research)
+                  <td>
+                    <p>{{ $research->research_code }}</p>
+                    <p>{{ $research->title }}</p>
+                  </td> 
+                  @endforeach
+                    
                     <td scope="row">
                       <p>nilai</p>
                     </td>
@@ -106,6 +112,7 @@
                   
                 </tbody>
             </table>
+          </div>
 
             <br><br>
 {{--             

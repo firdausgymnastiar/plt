@@ -5,16 +5,16 @@
 
         <div class="card-body">
           <div>
-            {{-- Search --}}
-            @livewire('past.search')
-          </div>
-
-          <div>
-            {{-- Content --}}
-            {{-- @livewire('past.content') --}}
-          </div>
-            
-            
+            <div class="row">
+              <div class="col-sm-12">                
+                {{-- Search --}}
+                @livewire('past.search')
+              </div>
+              <div>
+                {{-- Content --}}
+                {{-- @livewire('past.content') --}}
+              </div>
+              </div>
 
         </div>
 

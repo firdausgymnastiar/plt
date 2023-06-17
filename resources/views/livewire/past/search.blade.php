@@ -1,62 +1,42 @@
 <div>
 
     @if($search != true)
-    <div class="row">
-        <div class="col-sm-12">
-            {{-- Example with multiple selections (for SelectBs) --}}
-            @php
-            $config = [
-                "title" => "Select name of student",
-                "liveSearch" => true,
-                "liveSearchPlaceholder" => "Search name of student",
-                "showTick" => true,
-                "actionsBox" => true,
-            ];
-            $options= ['Select name of student','Asep', 'Rizki', 'Topik', 'Reza'];
-            @endphp
-
-            <x-adminlte-select-bs id="optionsCategory" name="optionsCategory[]" label="Please select name of student" label-class="text-danger" :config="$config" >
-            <x-slot name="prependSlot">
-                <div wire:click="setContent" class="btn input-group-text bg-gradient-red">
-                    <i class="fas fa-search"></i>
-                </div>
-            </x-slot>
-            <x-adminlte-options :options="$options"/>
-            {{-- <option>Vehicle 1</option>
-            <option>Vehicle 2</option> --}}
-            </x-adminlte-select-bs>
-            <hr>
-            <p>There is no event participants, please search the name of student</p>
+        <div class="row">
+            <div class="col-sm-12">
+                    <x-adminlte-select2 name="sel2Vehicle" label="Vehicle" label-class="text-lightblue"
+                    igroup-size="lg" data-placeholder="Select name of student">
+                    <x-slot name="prependSlot">
+                        <div wire:click="setContent" class="btn input-group-text bg-gradient-red">
+                            <i class="fas fa-search"></i>
+                        </div>
+                    </x-slot>
+                    <option default></option> 
+                    @foreach ($students as $index => $student)
+                    <option value="{{$student->id}}">{{$student->first_name}} {{$student->last_name}}</option>
+                    @endforeach
+                </x-adminlte-select2>
+                <hr>
+                <p>There is no event participants, please search the name of student</p>
+            </div>
         </div>
-    </div>
     @else
-    <div class="row">
-        <div class="col-sm-12">
-            {{-- Example with multiple selections (for SelectBs) --}}
-            @php
-            $config = [
-                "title" => "Select name of student",
-                "liveSearch" => true,
-                "liveSearchPlaceholder" => "Search name of student",
-                "showTick" => true,
-                "actionsBox" => true,
-            ];
-            $options= ['Select name of student','Asep', 'Rizki', 'Topik', 'Reza'];
-            @endphp
-
-            <x-adminlte-select-bs id="optionsCategory" name="optionsCategory[]" label="Please select name of student" label-class="text-danger" :config="$config" >
-            <x-slot name="prependSlot">
-                <div wire:click="setContent" class="input-group-text bg-gradient-red">
-                    <i class="fas fa-search"></i>
-                </div>
-            </x-slot>
-            <x-adminlte-options :options="$options"/>
-            {{-- <option>Vehicle 1</option>
-            <option>Vehicle 2</option> --}}
-            </x-adminlte-select-bs>
-            <hr>
-            @livewire('past.content')
-        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <x-adminlte-select2 name="sel2Vehicle" label="Vehicle" label-class="text-lightblue"
+                    igroup-size="lg" data-placeholder="Select name of student">
+                    <x-slot name="prependSlot">
+                        <div wire:click="setContent" class="btn input-group-text bg-gradient-red">
+                            <i class="fas fa-search"></i>
+                        </div>
+                    </x-slot>
+                    <option default></option> 
+                    @foreach ($students as $index => $student)
+                    <option value="{{$student->id}}">{{$student->first_name}} {{$student->last_name}}</option>
+                    @endforeach
+                </x-adminlte-select2>
+                <hr>
+                @livewire('past.content')
+            </div>
     </div>
     @endif
 

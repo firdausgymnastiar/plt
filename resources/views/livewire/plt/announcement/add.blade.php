@@ -76,7 +76,7 @@
             @Arsys<i>2023</i>
         </div>
     </div>
-    @push('scripts')
+    {{-- @push('scripts')
         <script>
             //var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
             $(document).ready(function () {
@@ -88,5 +88,5 @@
                 });
             });
         </script>
-    @endpush
+    @endpush --}}
 </div>

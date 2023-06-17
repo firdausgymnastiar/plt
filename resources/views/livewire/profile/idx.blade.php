@@ -67,5 +67,18 @@
         </div>
     </div>
 
+   {{-- With prepend slot, label and data-placeholder config --}}
+<x-adminlte-select2 name="sel2Vehicle" label="Vehicle" label-class="text-lightblue"
+igroup-size="lg" placeholder="Select an option...">
+<x-slot name="prependSlot">
+    <div class="input-group-text bg-gradient-info">
+        <i class="fas fa-car-side"></i>
+    </div>
+</x-slot>
+<option/>
+<option>Vehicle 1</option>
+<option>Vehicle 2</option>
+</x-adminlte-select2>
+
 </div>
 @endsection

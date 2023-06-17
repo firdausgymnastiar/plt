@@ -3,6 +3,7 @@
 namespace App\Http\Livewire\Past;
 
 use Livewire\Component;
+use App\Models\Entities\Student;
 
 class Idx extends Component
 {
