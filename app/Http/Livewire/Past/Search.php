@@ -17,6 +17,7 @@ class Search extends Component
     public function setContent()
     {
         $this->search = true;
+        $this->emit('selectContent');
     }
 
     public function mount()

@@ -1,36 +1,37 @@
 <div>
-    <div>
-        <table class="table table-striped">
-            <h4>Supervised Student</h4>
-            <thead>
-                <hr>
-              <tr> 
-                <th scope="col">Student</th>
-                <th scope="col">Research</th>
-                <th scope="col">Mark</th>
-              </tr>
-            </thead>
-            <tbody>
-              
-              <tr>
-                <td scope="row">
-                  <p>kode student</p>
-                  <p>Nama student</p>
-                </td>
-
-              @foreach ($researchs as $research)
-              <td>
-                <p>{{ $research->research_code }}</p>
-                <p>{{ $research->title }}</p>
-              </td> 
-              @endforeach
-                
-                <td scope="row">
-                  <p>nilai</p>
-                </td>
-              </tr>
-              
-            </tbody>
-        </table>
+    <div class="row">
+        <h4>Supervised Student</h4>
+        <hr>
+            @foreach ($researchs as $research)
+            @foreach ($students as $student)
+            @foreach ($kodes as $kode)
+                <table class="table table-striped table-sm">
+                    <thead>
+                        <tr>    
+                            <th class="col-sm-3">Student</th>                                
+                            <th class="col-sm-8">Research</th>
+                            <th class="col-sm-1"> Mark</th>                                
+                        </tr>
+                    </thead>
+                    <tbody>                    
+                        <tr>            
+                            <td>
+                                <p>{{$kode->code}}.{{$student->student_number}}</p>
+                                <p> {{$student->first_name}} {{$student->last_name}}</p>
+                            </td>  
+                            <td>
+                                <p>{{ $research->research_code }}</p>
+                                <p>{{ $research->title }}</p>
+                            </td> 
+                            <td>
+                                <p>nilai</p>
+                            </td>
+                        </tr>                    
+                    </tbody>
+                </table>
+            @endforeach
+            @endforeach
+            @endforeach
+        <hr>
     </div>
 </div>
