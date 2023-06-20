@@ -20,7 +20,7 @@
             <div class="col-sm-12">
                 <div class="col-sm-4">
                     <div class="input-group mb-3">
-                        <input type="text" class="form-control" placeholder="Search name of student" aria-label="Search name of student" aria-describedby="button-addon2">
+                        <input wire:model="searchQuery" type="text" class="form-control" placeholder="Search name of student" aria-label="Search name of student" aria-describedby="button-addon2">
                         <div class="input-group-append">
                           <button wire:click="setContent" class="btn btn-outline-success" type="button" id="button-addon2">Search!</button>
                         </div>

@@ -10,4 +10,9 @@ class StudyProgram extends Model
     use HasFactory;
     protected $fillable = [];
     protected $table = 'arsys_study_program';
+
+    // public function students()
+    // {
+    //     return $this->hasMany(Student::class);
+    // }
 }

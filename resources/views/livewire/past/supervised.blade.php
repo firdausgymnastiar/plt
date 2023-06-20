@@ -1,7 +1,6 @@
 <div>
     <div class="row">
         <h4>Supervised Student</h4>
-        {{-- <p>{{ $students }} </p> --}}
         <hr>
             {{-- @foreach ($researchs as $research) --}}
             @foreach ($students as $student)
@@ -17,7 +16,11 @@
                     <tbody>                    
                         <tr>            
                             <td>
-                                {{-- <p>{{$kode->code}}.{{$student->student_number}}</p> --}}
+                                {{-- <p>{{$kodes->program->code}}.{{$student->student_number}}</p> --}}
+                                <p>{{$student->code}}.{{$student->student_number}}</p>
+                                {{-- <p>{{$student->program->code}}.{{$student->student_number}}</p> --}}
+                                {{-- <p>{{$student->program->code}}.{{$student->student_number}}</p> --}}
+                                {{-- <p>.{{$student->student_number}}</p> --}}
                                 <p> {{$student->first_name}} {{$student->last_name}}</p>
                                 {{-- <p> {{$student}}</p> --}}
                             </td>  
@@ -33,6 +36,7 @@
                 </table>
             {{-- @endforeach
             @endforeach --}}
+            {{-- @endforeach --}}
             @endforeach
         <hr>
     </div>
