@@ -5,6 +5,7 @@
             {{-- @foreach ($researchs as $research) --}}
             @foreach ($students as $student)
             {{-- @foreach ($kodes as $kode) --}}
+            {{-- @foreach ($marks as $mark) --}}
                 <table class="table table-striped table-sm">
                     <thead>
                         <tr>    
@@ -25,11 +26,14 @@
                                 {{-- <p> {{$student}}</p> --}}
                             </td>  
                             <td>
-                                {{-- <p>{{ $research->research_code }}</p>
-                                <p>{{ $research->title }}</p> --}}
+                                <p>{{ $student->research_code }}</p>
+                                {{-- <p>{{ $research->research_code }}</p> --}}
+                                {{-- <p>{{ $research->title }}</p> --}}
+                                <p>{!! $student->title !!}</p>
                             </td> 
                             <td>
-                                <p>nilai</p>
+                                <p></p><i class="fa fa-solid fa-pen" style="color: #23a013;"></i>nilai</p>
+
                             </td>
                         </tr>                    
                     </tbody>

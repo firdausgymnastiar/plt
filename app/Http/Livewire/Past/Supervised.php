@@ -8,41 +8,52 @@ use App\Models\Entities\Student;
 use App\Models\Entities\StudyProgram;
 use App\Http\Livewire\Past\Search;
 use Illuminate\Http\Request;
+use App\Models\Entities\DefenseExaminerScore;
 use Illuminate\Support\Facades\DB;
 
 class Supervised extends Component
 {
     public $searchQuery=[];
-    // public $program=[];
+    // public $searchResearch=[];
     
     protected $listeners = ['searchQueryUpdated'];
 
     public function searchQueryUpdated($query)
     {
-        // $result = Student::where('first_name', 'LIKE', '%'.$query.'%')->orWhere('last_name', 'LIKE', '%'.$query.'%')->get();
-
-        // $result = Student::all();
-        $result = DB::table('arsys_student')
-                ->join('arsys_study_program', 'arsys_student.program_id', 'arsys_study_program.id')
-                ->select('arsys_student.*', 'arsys_study_program.code')
-                ->where('first_name', 'LIKE', '%'.$query.'%')->orWhere('last_name', 'LIKE', '%'.$query.'%')->get();
-        
-
-
-        // $a = Student::where('program_id', $result)->get();
-        // $c = StudyProgram::with('students')->get();
-        // $b = StudyProgram::where('id', 'LIKE', '%'.$a.'%')->get();
-        
-        // $studyCode = StudyProgram::where('id', Student::where('program_id', Student::where('first_name', 'John')->get();
-        // $studyProgram = DB::table('arsys_student')
-        //         ->join('arsys_study_program', 'arsys_student.program_id', '=', 'arsys_study_program.id')
+        // $student = DB::table('arsys_student')
+        //         ->join('arsys_study_program', 'arsys_student.program_id', 'arsys_study_program.id')
         //         ->select('arsys_student.*', 'arsys_study_program.code')
-        //         ->get();
-        // dd($categories);
-        
-        $this->searchQuery = $result;
-        // $this->program = $studyProgram;
-        
+        //         ->where('first_name', 'LIKE', '%'.$query.'%')
+        //         ->orWhere('last_name', 'LIKE', '%'.$query.'%')->get();
+
+        $student = DB::table('arsys_student')
+                ->join('arsys_study_program', 'arsys_student.program_id', 'arsys_study_program.id')
+                ->join('arsys_research', 'arsys_student.id', 'arsys_research.student_id')
+                ->select('arsys_student.*', 'arsys_study_program.code', 'arsys_research.title', 'arsys_research.research_code')
+                ->where('first_name', 'LIKE', '%'.$query.'%')
+                ->orWhere('last_name', 'LIKE', '%'.$query.'%')->get();
+
+        // $research = DB::table('arsys_student')
+        //         ->join('arsys_research', 'arsys_student.id', 'arsys_research.student_id')
+        //         ->select('arsys_student.*', 'arsys_research.title')
+        //         ->where('first_name', 'LIKE', '%'.$query.'%')
+        //         ->orWhere('last_name', 'LIKE', '%'.$query.'%')->get();
+
+
+        //         $data = DB::table('table1')
+        //     ->join('table2', 'table1.id', '=', 'table2.table1_id')
+        //     ->join('table3', 'table2.id', '=', 'table3.table2_id')
+        //     ->select('table1.column1', 'table2.column2', 'table3.column3')
+        //     ->get();
+        // $research = DB::table('arsys_research')
+        // ->join('arsys_student', 'arsys_research.student_id', 'arsys_student.id')
+        // ->select('arsys_research.*', 'arsys_student.id')
+        // ->where('first_name', 'LIKE', '%'.$query.'%')
+        // ->orWhere('last_name', 'LIKE', '%'.$query.'%')->get();
+
+
+        // $this->searchResearch = $research;
+        $this->searchQuery = $student;
     }
     
     public function render()
@@ -58,38 +69,13 @@ class Supervised extends Component
     //     //     'kodes' => $kodes            
     //     // ]);
 
-    // $studyCode = StudyProgram::where('id', Student::find('program_id'))->get();
-        // $studyCode = StudyProgram::where('id', Student::find('program_id'))->get();
-        // $kodes  = StudyProgram::all();
-
-        // $kode = $studyCode['']
-
-        // $this->codes = $studyCode;
+    $marks = DefenseExaminerScore::take(20)->get();
         
-        // dd($studyCode);
-        // $kodes = StudyProgram::where('id', Student::find('program_id'))->get();
-        
-
-        // $studyProgram = DB::table('arsys_student')
-        //         ->join('arsys_study_program', 'arsys_student.program_id', '=', 'arsys_study_program.id')
-        //         ->select('arsys_student.*', 'arsys_study_program.code')
-        //         ->get();
-
-        //         $data = StudyProgram::join('arsys_study_program', 'arsys_student.program_id', '=', 'arsys_study_program.id')
-        //     ->select('arsys_student.*', 'arsys_study_program.code')
-        //     ->get();
-
-        // $kodes = Student::paginate();
-        // $result = Student::paginate(5);
-
-        // $result = DB::table('arsys_student')
-        //         ->join('arsys_study_program', 'arsys_student.program_id', 'arsys_study_program.id')
-        //         ->select('arsys_student.*', 'arsys_study_program.code')
-        //         ->paginate(5);
 
         return view('livewire.past.supervised', [
                 'students' => $this->searchQuery
-                // ,'kodes' => $kodes
+                // ,'researchs' => $this->searchResearch
+                ,'marks' => $marks
         ]);
     }
 

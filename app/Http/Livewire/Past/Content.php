@@ -9,9 +9,10 @@ class Content extends Component
     public $pageOne, $pageTwo = null;
     
     public function render()
-    {
+    {    
+            return view('livewire.past.content');
         
-        return view('livewire.past.content');
+
     }
     public function setPageOne()
     {
