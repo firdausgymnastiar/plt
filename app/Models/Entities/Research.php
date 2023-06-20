@@ -4,7 +4,7 @@ namespace App\Models\Entities;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Modules\ArSys\Entities\Old\EndResearch;
+use App\Models\Entities\EndResearch;
 
 class Research extends Model
 {

@@ -7,7 +7,7 @@
             <a class="nav-link">Announcement</a>
           </li>
           <li wire:click="setMenu('link2')" style="cursor: pointer" class="nav-item">
-            <a class="nav-link">Link 2</a>
+            <a class="nav-link" href="{{ route('past.idx') }}">Proyek Akhir</a>
           </li>
           <li wire:click="setMenu('link3')" style="cursor: pointer" class="nav-item">
             <a class="nav-link">Link 3</a>

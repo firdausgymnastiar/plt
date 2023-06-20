@@ -57,7 +57,7 @@ class Add extends Component
         // dd($this->firstAuthor);
 
         $this->staffs = Staff::where('status_id', StaffStatus::where('abbrev', 'ACT')->first()->id)->get();
-        // dd($this->staffs);
+        // dd($this->staffs);a
 
     }
 
