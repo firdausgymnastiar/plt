@@ -27,6 +27,78 @@
                     </div>
                 </div>
                 <hr>
+                {{-- @if($pageTwo != true && $pageOne = true )
+                <div>
+                    <nav aria-label="Page navigation example">
+                        <ul class="pagination">
+                          <li class="page-item disabled">
+                            <a class="page-link"aria-label="Previous">
+                              <span aria-hidden="true">&laquo;</span>
+                            </a>
+                          </li>
+                          <li wire:click="setPageOne" class="page-item"><a class="page-link">1</a></li>
+                          <li wire:click="setPageTwo" class="page-item"><a class="page-link">2</a></li>
+                          <li class="page-item disabled">
+                            <a class="page-link" href="#" aria-label="Next">
+                              <span aria-hidden="true">&raquo;</span>
+                            </a>
+                          </li>
+                        </ul>
+                    </nav>
+                  </div>  
+                @livewire('past.defense')
+                <br>
+                @livewire('past.supervised')
+                <br>
+                @livewire('past.pre')
+                @elseif($pageTwo = true  && $pageOne != true ) 
+                <div>
+                    <nav aria-label="Page navigation example">
+                        <ul class="pagination">
+                          <li class="page-item disabled">
+                            <a class="page-link"aria-label="Previous">
+                              <span aria-hidden="true">&laquo;</span>
+                            </a>
+                          </li>
+                          <li wire:click="setPageOne" class="page-item"><a class="page-link">1</a></li>
+                          <li wire:click="setPageTwo" class="page-item"><a class="page-link">2</a></li>
+                          <li class="page-item disabled">
+                            <a class="page-link" href="#" aria-label="Next">
+                              <span aria-hidden="true">&raquo;</span>
+                            </a>
+                          </li>
+                        </ul>
+                    </nav>
+                  </div>                      
+                @livewire('past.pre')
+                @else
+                <div>
+                    <nav aria-label="Page navigation example">
+                        <ul class="pagination">
+                          <li class="page-item disabled">
+                            <a class="page-link"aria-label="Previous">
+                              <span aria-hidden="true">&laquo;</span>
+                            </a>
+                          </li>
+                          <li wire:click="setPageOne" class="page-item"><a class="page-link">1</a></li>
+                          <li wire:click="setPageTwo" class="page-item"><a class="page-link">2</a></li>
+                          <li class="page-item disabled">
+                            <a class="page-link" href="#" aria-label="Next">
+                              <span aria-hidden="true">&raquo;</span>
+                            </a>
+                          </li>
+                        </ul>
+                    </nav>
+                  </div>    
+                  @livewire('past.defense')
+                <br>
+                @livewire('past.supervised')                  
+                @livewire('past.pre')
+                @endif --}}
+
+
+
+                <hr>
                 @livewire('past.content')
             </div>
     </div>

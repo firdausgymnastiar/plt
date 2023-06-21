@@ -1,5 +1,5 @@
 <div>       
-  {{-- @if($pageTwo != true)   
+            {{-- @if($pageTwo != true)   
             <div>
               <nav aria-label="Page navigation example">
                   <ul class="pagination">
@@ -18,14 +18,15 @@
                   </ul>
               </nav>
             </div>   --}}
-                      
+            {{-- @livewire('past.navbar') --}}
+ 
               @livewire('past.defense')
                 <br>
               @livewire('past.supervised')
                 <br>
-              @livewire('past.pre')
-          {{-- @elseif($pageTwo = true )                       
-            @livewire('past.pagination') --}}
+              
+          {{-- @elseif($pageTwo = true )                        --}}
+          @livewire('past.pre')
             {{-- @endif --}}
             
               

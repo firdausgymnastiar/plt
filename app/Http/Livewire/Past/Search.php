@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 class Search extends Component
 {
     public $search = null;
+    public $pageOne, $pageTwo = null;
     public $searchQuery = '';
     public function render()
     {
@@ -22,6 +23,16 @@ class Search extends Component
         $this->search = true; ;
         $this->emit('searchQueryUpdated', $this->searchQuery);
 
+    }
+
+    public function setPageOne()
+    {
+        $this->pageOne = true;
+    }
+    public function setPageTwo()
+    {
+        $this->pageTwo = true;
+        return view('livewire.past.pre');
     }
 
     // public function mount()

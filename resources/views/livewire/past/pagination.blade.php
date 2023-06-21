@@ -1,4 +1,4 @@
-@if($pageOne != true)   
+{{-- @if($pageOne != true)   
 <div>
   <div>
     <nav aria-label="Page navigation example">
@@ -26,4 +26,4 @@
   @livewire('past.supervised')
   @endif
 </div>
-
+ --}}

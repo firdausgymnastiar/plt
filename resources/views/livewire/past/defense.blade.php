@@ -38,7 +38,9 @@
               <p> <i class="fa fa-solid fa-check" style="color: #23a013;"></i> Muhammad Adli Rizqulloh, M.T.</p>
             </td>
             <td>
-              <p><a href=""><u>1. <i class="fas fa-file-pdf" style="color: #0f8bff;"></i> Nama Mahasiswa</u></a></p>
+              @foreach ($students as $student)
+              <p><a href=""><u>1. <i class="fas fa-file-pdf" style="color: #0f8bff;"></i> {{$student->first_name}} {{$student->last_name}}</u></a></p>
+              @endforeach
               <hr>
               <p><i>Please Click on the</i> <i class="fas fa-file-pdf"></i> <i>to download the participant's article</i></p>
               <p></p>
