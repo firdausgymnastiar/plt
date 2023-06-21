@@ -32,7 +32,7 @@
                                 <p>{!! $student->title !!}</p>
                             </td> 
                             <td>
-                                <p></p><i class="fa fa-solid fa-pen" style="color: #23a013;"></i>nilai</p>
+                                <p></p><i class="fa fa-solid fa-pen" style="color: #23a013;"></i>385</p>
 
                             </td>
                         </tr>                    

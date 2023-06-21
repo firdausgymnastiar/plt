@@ -26,22 +26,22 @@
                     <hr>
                   </td>
                   <td>
-                    <p>Session:</p>
+                    <p class="font-weight-bold">Session:</p>
                     <p>08:30-09:30</p>
-                    <p>Media:</p>
-                    <p>Tombol</p>
+                    <p class="font-weight-bold">Media:</p>
+                    <button type="button" class="btn btn-info btn-sm"><i class="fa fa-sharp fa-regular fa-print" style="color: #ffffff;"></i> print assignment</button>
                   </td>
                   <td>
-                    <p>Kode SPV</p>
-                    <p>Kode SPV</p>
+                    <p>AHD</p>
+                    <p>DDW</p>
                   </td>
                   <td>
-                    <p>kode EXA</p>
-                    <p>kode EXA</p>
-                    <p>kode EXA</p>
+                    <p> <i class="fa fa-solid fa-check" style="color: #23a013;"></i> EAJ</p>
+                    <p> <i class="fa fa-solid fa-check" style="color: #23a013;"></i> AIP</p>
+                    <p> <i class="fa fa-solid fa-check" style="color: #23a013;"></i> YYS</p>
                   </td>
                   <td>
-                    <p>Nilai</p>
+                    <p> <i class="fa fa-solid fa-pen" style="color: #23a013;"></i> 390</p>
                   </td>
                 </tr>                    
               </tbody>
